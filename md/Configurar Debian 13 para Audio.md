@@ -2,7 +2,7 @@
 
 > Essa configuração permite produzir música na DAW e ouvir ao mesmo tempo os sons do sistema, como players de música ou vídeos, sem interrupções ou conflitos de áudio.
 
-##### Instala suporte JACK no PipeWire:
+Instala suporte JACK no PipeWire:
 
 ```bash
 sudo apt install pipewire-jack
@@ -10,7 +10,7 @@ sudo apt install pipewire-jack
 
 -----
 
-##### Instala ferramentas e bibliotecas essenciais para compilar.
+Instala ferramentas e bibliotecas essenciais para compilar.
 
 ```bash
 sudo apt install --no-install-recommends dkms libdw-dev clang lld llvm build-essential git wget lsb_realease
@@ -18,7 +18,7 @@ sudo apt install --no-install-recommends dkms libdw-dev clang lld llvm build-ess
 
 ----
 
-##### Copia configuração para o sistema localizar as bibliotecas do JACK no PipeWire.
+Copia configuração para o sistema localizar as bibliotecas do JACK no PipeWire.
 
 ```bash
 sudo cp /usr/share/doc/pipewire/examples/ld.so.conf.d/pipewire-jack-*.conf /etc/ld.so.conf.d/
@@ -26,7 +26,7 @@ sudo cp /usr/share/doc/pipewire/examples/ld.so.conf.d/pipewire-jack-*.conf /etc/
 
 ---
 
-##### Atualiza a lista de bibliotecas do sistema para reconhecer as novas configurações.
+Atualiza a lista de bibliotecas do sistema para reconhecer as novas configurações.
 
 ```bash
 sudo ldconfig
@@ -34,7 +34,7 @@ sudo ldconfig
 
 ----
 
-##### Adicionar o usuário ao grupo `audio` para ter permissões especiais de áudio.
+Adicionar o usuário ao grupo `audio` para ter permissões especiais de áudio.
 
 ```bash
 sudo usermod -aG audio "$USER"
@@ -113,7 +113,7 @@ sudo update-grub
 
 -------
 
-##### Baixe a regra do `udev` para reduzir latência de DMA da CPU.
+Baixe a regra do `udev` para reduzir latência de DMA da CPU.
 
 ```bash
 sudo wget -qO /etc/udev/rules.d/99-cpu-dma-latency.rules https://raw.githubusercontent.com/Ardour/ardour/master/tools/udev/99-cpu-dma-latency.rules
@@ -121,7 +121,7 @@ sudo wget -qO /etc/udev/rules.d/99-cpu-dma-latency.rules https://raw.githubuserc
 
 -----
 
-##### Baixe o script para priorizar interrupções de hardware relacionadas ao áudio.
+Baixe o script para priorizar interrupções de hardware relacionadas ao áudio.
 
 ```bash
 git clone -q https://github.com/jhernberg/udev-rtirq
@@ -133,7 +133,7 @@ depois entre na pasta do script baixado
 cd udev-rtirq
 ```
 
-##### Instale o script de priorização de IRQ no sistema.
+Instale o script de priorização de IRQ no sistema.
 
 ```bash
 sudo make install
