@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Linux Legends - Seu portal para o mundo Linux e produção musical.">
+  <title>Linux Legends</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="terminal-frame">
+    <header class="terminal-header">
+      <div id="logo">
+        <h1>Linux@Legends<span class="cursor">_</span></h1>
+      </div>
+      <nav class="terminal-menu" aria-label="Menu principal">
+        <ul>
+          <li><a href="#" data-page="inicio">Início</a></li>
+          <li><a href="#" data-page="tutoriais">Tutoriais</a></li>
+          <li><a href="#" data-page="producao">Produção Musical</a></li>
+          <li><a href="#" data-page="sobre">Sobre</a></li>
+          <li><a href="#" data-page="contato">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="terminal-content" id="content">
+      <h2>Bem-vindo ao Linux Legends!</h2>
+      <p>Seu portal para o mundo Linux.</p>
+    </main>
+
+    <footer class="terminal-footer">
+      <p>© 2025 Linux Legends</p>
+    </footer>
+  </div>
+
+  <script>
+    const pages = {
+      inicio: `
+        <h2>Bem-vindo ao Linux Legends!</h2>
+        <p>Seu portal para o mundo Linux.</p>
+      `,
+      tutoriais: `
+        <h2>Tutoriais</h2>
+        <p>Veja abaixo um exemplo de comando Bash:</p>
+        <pre class="code-block"><code>$ sudo apt update && sudo apt upgrade -y
+$ echo "Instalação concluída com sucesso!"</code></pre>
+      `,
+      producao: `
+        <h2>Produção Musical no Linux</h2>
+        <p>Aprenda a gravar, mixar e masterizar usando software livre.</p>
+      `,
+      sobre: `
+        <h2>Sobre</h2>
+        <p>O Linux Legends é um projeto dedicado a ensinar Linux e produção musical.</p>
+      `,
+      contato: `
+        <h2>Contato</h2>
+        <p>Email: contato@linuxlegends.com</p>
+      `
+    };
+
+    document.querySelectorAll('.terminal-menu a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const page = link.getAttribute('data-page');
+        document.getElementById('content').innerHTML = pages[page];
+      });
+    });
+  </script>
+
+  <div class="neon-cursor"></div>
+
+  <script>
+    const cursor = document.querySelector('.neon-cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.top = e.clientY + 'px';
+      cursor.style.left = e.clientX + 'px';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "IBM Plex Mono", monospace;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Estrutura principal */
+.terminal-frame {
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 1px solid #0f0;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.terminal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #0f0;
+  background-color: #0a0a0a;
+  flex-wrap: wrap;
+}
+
+#logo h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #0f0;
+  font-weight: 700;
+  font-family: "Share Tech Mono", monospace;
+  display: flex;
+  align-items: center;
+}
+
+.cursor {
+  animation: blink 1s step-end infinite;
+  color: #0f0;
+}
+
+@keyframes blink {
+  from,
+  to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Menu */
+.terminal-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.terminal-menu a {
+  text-decoration: none;
+  color: #0f0;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.terminal-menu a:hover,
+.terminal-menu a:focus {
+  color: #000;
+  background-color: #0f0;
+  border: 1px solid #0f0;
+  outline: none;
+}
+
+/* Conteúdo */
+.terminal-content {
+  padding: 30px;
+  background-color: #111;
+}
+
+/* Rodapé */
+.terminal-footer {
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #0f0;
+  background-color: #0a0a0a;
+  font-size: 14px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .terminal-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .terminal-menu ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  .terminal-menu a {
+    display: block;
+    width: 100%;
+  }
+}
+/* Bloco de código estilo terminal */
+.code-block {
+  background-color: #000;
+  color: #c061cb;
+  padding: 15px;
+  border: 1px solid #0f0;
+  border-radius: 4px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 14px;
+  overflow-x: auto;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+}
