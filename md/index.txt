@@ -1,1 +1,2 @@
 Configurar Debian 13 para Audio.md
+nano.md
