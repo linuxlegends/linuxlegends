@@ -1,4 +1,5 @@
-# SITE: https://linuxlegends.github.io/linuxlegends/
+# Linux Legends
+https://linuxlegends.github.io/linuxlegends/
 
 ## Erro ao carregar tutoriais
 
